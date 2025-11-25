@@ -1,0 +1,49 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+struct Course {
+    string name;
+    float grade;       // Grade points for the course
+    int creditHours;
+};
+
+int main() {
+    int n;
+    cout << "Enter number of courses taken: ";
+    cin >> n;
+
+    vector<Course> courses(n);
+    float totalGradePoints = 0;
+    int totalCredits = 0;
+
+    // Input grades and credit hours
+    for(int i = 0; i < n; i++) {
+        cout << "\nCourse " << i + 1 << " name: ";
+        cin >> courses[i].name;
+
+        cout << "Enter grade (e.g., 9 for A+, 8 for A, etc.): ";
+        cin >> courses[i].grade;
+
+        cout << "Enter credit hours: ";
+        cin >> courses[i].creditHours;
+
+        totalCredits += courses[i].creditHours;
+        totalGradePoints += courses[i].grade * courses[i].creditHours;
+    }
+
+    // Calculate GPA / CGPA
+    float cgpa = totalGradePoints / totalCredits;
+
+    // Display individual courses and final CGPA
+    cout << "\n--- Course Grades ---\n";
+    for(int i = 0; i < n; i++) {
+        cout << courses[i].name << ": Grade " << courses[i].grade 
+             << ", Credit Hours: " << courses[i].creditHours << endl;
+    }
+
+    cout << "\nTotal Credit Hours: " << totalCredits << endl;
+    cout << "Overall CGPA: " << cgpa << endl;
+
+    return 0;
+}
