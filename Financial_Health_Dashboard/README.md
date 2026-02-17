@@ -1,4 +1,3 @@
-📊 Financial Health / Health Dashboard
 📌 Objective
 To analyze key health/financial indicators and build an interactive Power BI dashboard that provides clear insights into overall performance, trends, and risk factors for better decision-making.
 📂 Dataset
